@@ -7,11 +7,11 @@ public class MonoPrint extends PrintJob {
 
     @Override
     public int calculateCharge() {
-        return getPages() * 500;
+        return getPages() * 500; //masukkin harga si monoprint, seperti yg di state di soal
     }
 
     @Override 
     public String label() {
-        return "Mono";
+        return "Mono"; //masukin info kalo apa yang di print ini itu mono
     }
 }

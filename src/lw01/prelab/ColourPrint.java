@@ -11,9 +11,9 @@ public class ColourPrint extends PrintJob {
         int biaya;
 
         if (pages <=10) {
-            biaya = pages * 1500;
+            biaya = pages * 1500; //kalo pages kurang dari 10, maka harganya 1500 per pages
         } else {
-            biaya = (10 * 1500) + ((pages - 10) * 1000);
+            biaya = (10 * 1500) + ((pages - 10) * 1000); //kalo pages lebih dari 10, ambil yang 10 dulu, kaliin sama 1500, trus sisanya dihargain 1000 per pages
         }
 
         return biaya + 2000;
@@ -21,6 +21,6 @@ public class ColourPrint extends PrintJob {
 
     @Override 
     public String label() {
-        return "Colour";
+        return "Colour"; //ngasi label kalo apa yg di printini tuh yang colour
     }
 }
