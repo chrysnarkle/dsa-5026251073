@@ -10,8 +10,8 @@ public class Main {
 
         LinkedList<String[]> transactions = new LinkedList<>();
         LinkedList<String[]> customers = new LinkedList<>();
-        Queue<String[]> queue = new LinkedList<>();
-        Stack<String[]> failed = new Stack<>();
+        Queue<String[]> queue = new LinkedList<>(); //fifo add poll
+        Stack<String[]> failed = new Stack<>();  //lifo push pop
 
         Scanner scan = new Scanner(Main.class.getResourceAsStream("transactions.txt"));
 
@@ -36,7 +36,24 @@ public class Main {
             String name = t[0];
             String type = t[1];
             int amount = Integer.parseInt(t[2]);
-        
+
+
+            //bagian setelah ini hasil perbaikan di kelas
+            // String[] customer = null;
+
+            // for (String[] data : customers) {
+            //     if (data[0].equals(name)) {
+            //         customer = data;
+            //         break;
+            //     }
+            // }
+
+            // if (customer == null) {
+            //     customer = new String[]{name, "0"};
+            //     customers.add(customer);
+            // }
+            //bagian diatas ini hasil perbaikan di kelas
+
             String[] customer = findCustomer(customers, name);
             int balance = Integer.parseInt(customer[1]);
 
